@@ -7,7 +7,7 @@
         <v-img
           v-if="appBarVisible"
           alt="Baybora Guelec"
-          class="pa-8 ma-8"
+          class=
           contain
           src="../../public/logo.png"
           width="85"
@@ -16,11 +16,7 @@
     </div>
 
     <v-spacer></v-spacer>
-    <transition name="fade">
-      <v-btn v-if="fade" color="grey" href="https://github.com/gaskraank" target="_blank" text>
-        <span class="mr-0 text">GitHub</span>
-      </v-btn>
-    </transition>
+
     <transition name="fade">
       <v-btn
         v-if="appBarVisible"
@@ -43,8 +39,20 @@
         <span class="mr-0 text">XING</span>
       </v-btn>
     </transition>
+
+      <transition name="fade">
+      <v-btn
+        v-if="appBarVisible"
+        color="grey"
+        href="https://github.com/gaskraank"
+        target="_blank"
+        text
+      >
+        <span class="mr-0 text">GitHub</span>
+      </v-btn>
+  </transition>
     <transition name="fade">
-      <v-btn v-if="appBarVisible" color="grey" href="linkedin" target="_blank" text>
+      <v-btn v-if="appBarVisible" color="grey"  target="_blank" text>
         <span class="mr-0 text">bayboragulec@gmail.com</span>
       </v-btn>
     </transition>

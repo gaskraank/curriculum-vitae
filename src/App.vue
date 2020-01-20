@@ -1,8 +1,8 @@
 <template>
-  <v-app style="background: black">
-    <Header/>
+  <v-app  style="background: black">
+    <Header />
 
-    <v-content>
+    <v-content >
       <MainArea/>
     </v-content>
   </v-app>
@@ -35,6 +35,8 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+
+
 }
 
 

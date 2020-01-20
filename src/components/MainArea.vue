@@ -1,23 +1,42 @@
 <template>
-  <v-container>
-    <v-layout text-center wrap>
-            <v-flex mb-0 xs12>
+<div>
+<v-content>
+  <v-container  fill-height>
+    <v-layout  text-center wrap ma-6>
+            <v-flex  xs12>
 
-        <transition name="jade" >
-          <p v-if="fontVisible"  class="floating gradient display-4 font-weight-bold mb-3">Product Design</p>
+        <transition name="jade" mode="in-out">
+          <p v-if="counter==0"  :class="bigFont" class=" gradient-0 text-md-left floating  font-weight-bold ">{{heading}}</p>
+          <p v-if="counter==1"  :class="bigFont" class="gradient-1 text-md-left floating font-weight-bold ">{{heading}}</p>
+          <p v-if="counter==2"  :class="bigFont" class="gradient-2  text-md-left floating font-weight-bold ">{{heading}}</p>
         </transition>
             </v-flex>
-      <v-flex mb-0 xs12>
+      <v-flex  md6 xs12>
         <transition name="fade" >
-          <p v-if="remainingFontVisible" class="display-3 font-weight-regular">
+          <p v-if="remainingFontVisible" class="text-md-left display-1 font-weight-regular">
             Imagine all the people
             <br />living life in peace.
+          </p>
+        </transition>
+      </v-flex>
+      <v-spacer/>
+
+            <v-flex md6  xs12>
+        <transition name="fade" >
+          <p  v-if="remainingFontVisible"  class="grey--text text-md-left  .body-1 font-weight-regular">
+            Hi, my name is Baybora. I'm a software developer with a mechatronical engineering background. 
+            I love beautiful designed products, so I started getting into UI/UX & Design. You can look through my career and my resume and also get in contact with me.
           </p>
         </transition>
       </v-flex>
 
     </v-layout>
   </v-container>
+</v-content>
+
+
+  </div>
+
 </template>
 
 <script>
@@ -26,19 +45,51 @@ export default {
   methods: {
     toggleFontVisible() {
       setTimeout(() => {
-        this.fontVisible = true;
+        this.counter = 0
       }, 500);
       setTimeout(() => {
         this.remainingFontVisible = true;
       }, 1500);
+    },
+    changeHeading()
+    {
+      setInterval(() =>
+      { 
+        this.fontVisible = false
+        this.counter++;
+        if(this.counter >2) this.counter = 0
+        this.heading = this.headings[this.counter]
+        this.gradient = "gradient-" + this.counter
+        this.fontVisible = true
+      }, 5000);
+    }
+  },
+  computed: {
+    // a computed getter
+    bigFont: function () {
+              /* eslint no-console: ["error", { allow: ["warn", "error"] }] */
+console.warn(this.$vuetify.breakpoint.mdAndUp)
+     if(this.$vuetify.breakpoint.mdAndUp)
+      {
+        return "big-font"
+      }
+      else{
+                return "display-3"
+
+      }
     }
   },
   data: () => ({
     fontVisible: false,
-    remainingFontVisible: false
+    remainingFontVisible: false,
+    counter: -1,
+    heading: "Product.",
+    headings: ["Product.", "UI/UX.", "Design."],
+    gradient: "gradient-0"
   }),
   mounted: function() {
     this.toggleFontVisible();
+    this.changeHeading();
   }
 };
 </script>
@@ -46,13 +97,30 @@ export default {
 
 
 <style scoped>
-.gradient {
-  font-size: 100px;
+.gradient-0 {
   background: -webkit-linear-gradient(45deg, #005990, #00e190);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: "Futura", Helvetica, Arial, sans-serif !important; /* this was it */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; /* this was it */
 }
+
+.gradient-1 {
+  background: -webkit-linear-gradient(45deg, #dd5e89, #f7bb97);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; /* this was it */
+}
+.gradient-2 {
+  background: -webkit-linear-gradient(45deg, #4568dc, #b06ab3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; /* this was it */
+}
+
+.big-font{
+  font-size: 20vh !important;
+}
+
 
 .fade-enter-active,
 .fade-leave-active {
@@ -77,13 +145,20 @@ export default {
 }
 
 
+.component-fade-enter-active, .component-fade-leave-active {
+  transition: opacity .3s ease;
+}
+.component-fade-enter, .component-fade-leave-to
+/* .component-fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+
 
 
 .floating {  
     animation-name: floating;
     animation-duration: 3s;
-    margin-left: 30px;
-    margin-top: 5px;
       transition: opacity 3s;
 
 }
