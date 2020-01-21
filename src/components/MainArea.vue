@@ -31,7 +31,7 @@
       </v-flex>
           <br>
 
-        <v-flex  mt-12 wrap md12  xs12>
+        <v-flex  mt-8 wrap md12  xs12>
         <transition name="fade" >
  
         <v-tool-bar  v-if="remainingFontVisible"   color="primary">
