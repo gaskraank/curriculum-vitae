@@ -20,13 +20,38 @@
         </transition>
       </v-flex>
       <v-spacer/>
-
+    <br>
             <v-flex md6  xs12>
         <transition name="fade" >
           <p  v-if="remainingFontVisible"  class="grey--text text-md-left  .body-1 font-weight-regular">
             Hi, my name is Baybora. I'm a software developer with a mechatronical engineering background. 
             I love beautiful designed products, so I started getting into UI/UX & Design. You can look through my career and my resume and also get in contact with me.
           </p>
+        </transition>
+      </v-flex>
+          <br>
+
+        <v-flex  mt-12 wrap md12  xs12>
+        <transition name="fade" >
+ 
+        <v-tool-bar  v-if="remainingFontVisible"   color="primary">
+
+<v-chip-group
+          v-model="selection"
+          active-class="chip-gradient"
+          mandatory
+        >
+                          <v-spacer/>
+
+          <v-chip class="black" >Career</v-chip>
+          <v-chip class="black">Education</v-chip>
+          <v-chip class="black">Skills</v-chip>
+          <v-chip class="black">About</v-chip>
+                                    <v-spacer/>
+
+        </v-chip-group>
+
+      </v-tool-bar>
         </transition>
       </v-flex>
 
@@ -102,6 +127,10 @@ console.warn(this.$vuetify.breakpoint.mdAndUp)
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; /* this was it */
+}
+
+.chip-gradient {
+    background: -webkit-linear-gradient(45deg, #005990, #00e190);
 }
 
 .gradient-1 {
