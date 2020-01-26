@@ -25,7 +25,7 @@ export default {
         date: "October 19 - now",
         headings:
           "Mercedes-Benz Research & Development North America Inc., Silicon Valley California",
-        body: "Master thesis candidate @ Speech and Digital Assistants in Silicon Valley Headquarters for Mercedes-Benz North America Inc. Mainly doing frontend development, UI/UX for internal & future external products for data collection. Designed a chat-bot for simulating the digital in-car assistant in WebApp.  "
+        body: "Master thesis candidate @ Speech and Digital Assistants in Silicon Valley Headquarters for Mercedes-Benz North America Inc. Mainly doing frontend development, UI/UX for internal & future external products for data collection. Designed a chat-bot for simulating the digital in-car assistant in a WebApp.  "
       },
       {
         date: "October 18 - October 19",

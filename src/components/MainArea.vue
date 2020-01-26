@@ -2,9 +2,11 @@
   <div>
     <v-content>
       <v-container fill-height>
-        <v-layout text-center wrap
-            :class="{'ml-1 mr-1': $vuetify.breakpoint.smAndDown, 'ml-6 mr-6': $vuetify.breakpoint.mdAndUp}"
->
+        <v-layout
+          text-center
+          wrap
+          :class="{'ml-1 mr-1': $vuetify.breakpoint.smAndDown, 'ml-6 mr-6': $vuetify.breakpoint.mdAndUp}"
+        >
           <v-flex xs12>
             <transition name="jade" mode="in-out">
               <p
@@ -26,7 +28,7 @@
           </v-flex>
           <v-flex md6 xs12>
             <transition name="fade">
-              <p v-if="remainingFontVisible" class="text-md-left display-1 font-weight-regular">
+              <p v-if="remainingFontVisible" class="text-left display-1 font-weight-regular">
                 Imagine all the people
                 <br />living life in peace.
               </p>
@@ -38,7 +40,7 @@
             <transition name="fade">
               <p
                 v-if="remainingFontVisible"
-                class="grey--text text-md-left .body-1 font-weight-regular"
+                class="grey--text text-left .body-1 font-weight-regular"
               >
                 Hi, my name is Baybora. I'm a software developer with a mechatronical engineering background.
                 I love beautiful designed products, so I started getting into UI/UX & Design. You can look through my career and my resume and also get in contact with me.
@@ -50,7 +52,7 @@
           <v-flex mt-8 wrap md12 xs12>
             <transition name="fade">
               <v-toolbar v-if="remainingFontVisible" color="black">
-                                  <v-spacer />
+                <v-spacer />
 
                 <v-chip-group v-model="selection" active-class="chip-gradient" mandatory>
                   <v-chip class="black">Career</v-chip>
@@ -58,28 +60,23 @@
                   <v-chip class="black">Skills</v-chip>
                   <v-chip class="black">About</v-chip>
                 </v-chip-group>
-                                  <v-spacer />
-
+                <v-spacer />
               </v-toolbar>
             </transition>
           </v-flex>
         </v-layout>
-
       </v-container>
-
-
     </v-content>
-  <v-content>      
-          <v-container fill-height>
-     
-             <Career/>
-          </v-container>
-  </v-content>
+    <v-content>
+      <v-container fill-height>
+        <Career />
+      </v-container>
+    </v-content>
   </div>
 </template>
 
 <script>
-import Career from './Resume/Career'
+import Career from "./Resume/Career";
 export default {
   name: "MainArea",
   components: {

@@ -6,20 +6,20 @@
       <v-flex md6 xs12>
         <transition name="fade">
           <p v-if="remainingFontVisible" 
-          class="gradient-0 text-md-left headline font-weight-regular">{{date}}</p>
+          class="gradient-0 text-left headline font-weight-regular">{{date}}</p>
         </transition>
       </v-flex>
 
       <v-flex md6 xs12>
         <transition  name="fade">
           <p v-if="remainingFontVisible"
-            class="grey--white text-md-left .body-1 font-weight-bold"
+            class="grey--white text-left .body-1 font-weight-bold"
           >{{stationHeading}}</p>
         </transition>
 
         <transition name="fade">
           <p  v-if="remainingFontVisible"
-          class="grey--text text-md-left .body-1 font-weight-regular">
+          class="grey-text text-left .body-1 font-weight-regular">
             {{stationBody}}
           </p>
         </transition>

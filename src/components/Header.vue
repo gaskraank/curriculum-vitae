@@ -1,8 +1,9 @@
     <template>
   <v-app-bar app color="black" dark>
     <v-spacer />
+    <v-spacer></v-spacer>
 
-    <div class="d-flex align-center">
+    <div class=" align-center">
       <transition name="fade">
         <v-img
           v-if="appBarVisible"
@@ -15,6 +16,10 @@
       </transition>
     </div>
 
+    <v-spacer></v-spacer>
+    <v-spacer></v-spacer>
+    <v-spacer></v-spacer>
+    <v-spacer></v-spacer>
     <v-spacer></v-spacer>
 
     <transition name="fade">
@@ -57,6 +62,9 @@
       </v-btn>
     </transition>
     <v-spacer />
+
+    <v-spacer />
+
   </v-app-bar>
 </template>
       
