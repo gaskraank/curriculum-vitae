@@ -31,7 +31,7 @@ export default {
 
 <style>
 #app {
-  font-family: 'Futura', Helvetica, Arial, sans-serif; /* this was it */
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* this was it */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
