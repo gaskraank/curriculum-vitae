@@ -1,10 +1,7 @@
 <template>
 <v-container>
     <v-layout text-center wrap ml-6 mr-6>
-      <v-flex md12 xs12>
-        <transition name="fade">
-        </transition>
-      </v-flex>
+
       <ResumeSections v-bind:key="content.date" v-for="content in sections" :date='content.date' :stationHeading='content.headings' :stationBody='content.body' />
      
     </v-layout>
@@ -38,5 +35,13 @@ export default {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; /* this was it */
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 2s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>

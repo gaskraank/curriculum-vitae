@@ -47,16 +47,18 @@
 
           <v-flex mt-8 wrap md12 xs12>
             <transition name="fade">
-              <v-tool-bar v-if="remainingFontVisible" color="primary">
+              <v-toolbar v-if="remainingFontVisible" color="black">
+                                  <v-spacer />
+
                 <v-chip-group v-model="selection" active-class="chip-gradient" mandatory>
-                  <v-spacer />
                   <v-chip class="black">Career</v-chip>
                   <v-chip class="black">Education</v-chip>
                   <v-chip class="black">Skills</v-chip>
                   <v-chip class="black">About</v-chip>
-                  <v-spacer />
                 </v-chip-group>
-              </v-tool-bar>
+                                  <v-spacer />
+
+              </v-toolbar>
             </transition>
           </v-flex>
         </v-layout>
