@@ -1,9 +1,12 @@
 <template>
-    <v-layout text-center wrap ml-6 mr-6>
+    <v-layout text-center wrap
+    :class="{'ml-0 mr-0': $vuetify.breakpoint.smAndDown, 'ml-6 mr-6': $vuetify.breakpoint.mdAndUp}"
+     >
     
       <v-flex md6 xs12>
         <transition name="fade">
-          <p v-if="remainingFontVisible" class="gradient-0 text-md-left headline font-weight-regular">{{date}}</p>
+          <p v-if="remainingFontVisible" 
+          class="gradient-0 text-md-left headline font-weight-regular">{{date}}</p>
         </transition>
       </v-flex>
 
@@ -37,7 +40,8 @@ export default {
       }, 1500);
     },
   },
-  computed: {},
+  computed: {
+  },
   data: () => ({
         remainingFontVisible: false,
 

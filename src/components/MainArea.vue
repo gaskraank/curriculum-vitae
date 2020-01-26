@@ -2,7 +2,9 @@
   <div>
     <v-content>
       <v-container fill-height>
-        <v-layout text-center wrap ml-6 mr-6>
+        <v-layout text-center wrap
+            :class="{'ml-1 mr-1': $vuetify.breakpoint.smAndDown, 'ml-6 mr-6': $vuetify.breakpoint.mdAndUp}"
+>
           <v-flex xs12>
             <transition name="jade" mode="in-out">
               <p
