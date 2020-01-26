@@ -3,7 +3,7 @@
     <v-spacer />
     <v-spacer></v-spacer>
 
-    <div class=" align-center">
+    <div class="align-center">
       <transition name="fade">
         <v-img
           v-if="appBarVisible"
@@ -57,8 +57,8 @@
       </v-btn>
   </transition>
     <transition name="fade">
-      <v-btn v-if="appBarVisible" color="grey"  target="_blank" text>
-        <span class="mr-0 text">bayboragulec@gmail.com</span>
+      <v-btn class="hidden-sm-and-down" v-if="appBarVisible" color="grey"  target="_blank" text>
+        <span class="mr-0  text">bayboragulec@gmail.com</span>
       </v-btn>
     </transition>
     <v-spacer />

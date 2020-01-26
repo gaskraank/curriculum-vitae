@@ -48,17 +48,12 @@
             </transition>
           </v-flex>
           <br />
-
           <v-flex mt-8 wrap md12 xs12>
             <transition name="fade">
               <v-toolbar v-if="remainingFontVisible" color="black">
                 <v-spacer />
-
                 <v-chip-group v-model="selection" active-class="chip-gradient" mandatory>
-                  <v-chip class="black">Career</v-chip>
-                  <v-chip class="black">Education</v-chip>
-                  <v-chip class="black">Skills</v-chip>
-                  <v-chip class="black">About</v-chip>
+                  <v-chip v-for="section in sections" :key="section" :value="section" class="black">{{section}}</v-chip>
                 </v-chip-group>
                 <v-spacer />
               </v-toolbar>
@@ -69,7 +64,13 @@
     </v-content>
     <v-content>
       <v-container fill-height>
-        <Career />
+        <transition name="slide-fade">
+        <Career v-show="selection == 'Career'" />
+        </transition>
+                <transition name="slide-fade">
+
+        <Education v-show="selection == 'Education'" />        </transition>
+
       </v-container>
     </v-content>
   </div>
@@ -77,10 +78,13 @@
 
 <script>
 import Career from "./Resume/Career";
+import Education from "./Resume/Education";
+
 export default {
   name: "MainArea",
   components: {
-    Career
+    Career,
+    Education
   },
   methods: {
     toggleFontVisible() {
@@ -120,7 +124,9 @@ export default {
     counter: -1,
     heading: "Product.",
     headings: ["Product.", "UI/UX.", "Design."],
-    gradient: "gradient-0"
+    gradient: "gradient-0",
+    selection: "Career",
+    sections: ["Career", "Education", "Skills", "About"]
   }),
   mounted: function() {
     this.toggleFontVisible();
@@ -190,6 +196,19 @@ export default {
   animation-name: floating;
   animation-duration: 3s;
   transition: opacity 3s;
+}
+
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
 }
 
 @keyframes floating {

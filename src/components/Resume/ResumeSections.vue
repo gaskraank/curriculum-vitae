@@ -1,30 +1,35 @@
 <template>
-    <v-layout text-center wrap
+  <v-layout
+    text-center
+    wrap
     :class="{'ml-0 mr-0': $vuetify.breakpoint.smAndDown, 'ml-6 mr-6': $vuetify.breakpoint.mdAndUp}"
-     >
-    
-      <v-flex md6 xs12>
-        <transition name="fade">
-          <p v-if="remainingFontVisible" 
-          class="gradient-0 text-left headline font-weight-regular">{{date}}</p>
-        </transition>
-      </v-flex>
+  >
+    <v-flex md6 xs12>
+      <transition mode="out-in" name="fade">
+        <p
+          v-if="remainingFontVisible"
+          class="gradient-0 text-left headline font-weight-regular"
+        >{{date}}</p>
+      </transition>
+    </v-flex>
 
-      <v-flex md6 xs12>
-        <transition  name="fade">
-          <p v-if="remainingFontVisible"
-            class="grey--white text-left .body-1 font-weight-bold"
-          >{{stationHeading}}</p>
-        </transition>
+    <v-flex md6 xs12>
+      <transition mode="out-in" name="fade">
+        <p v-if="remainingFontVisible" class="text-left .body-1 font-weight-bold">
+          <span class="white--text">{{location}}</span>
+          <br />
+          <span class="grey--text">{{stationHeading}}</span>
+        </p>
+      </transition>
 
-        <transition name="fade">
-          <p  v-if="remainingFontVisible"
-          class="grey-text text-left .body-1 font-weight-regular">
-            {{stationBody}}
-          </p>
-        </transition>
-      </v-flex>
-    </v-layout>
+      <transition mode="out-in" name="fade">
+        <p
+          v-if="remainingFontVisible"
+          class="grey--text text-left .body-1 font-weight-regular"
+        >{{stationBody}}</p>
+      </transition>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
@@ -38,16 +43,16 @@ export default {
       setTimeout(() => {
         this.remainingFontVisible = true;
       }, 1500);
-    },
+    }
   },
-  computed: {
-  },
+  computed: {},
   data: () => ({
-        remainingFontVisible: false,
-
+    remainingFontVisible: false
   }),
-  mounted: function() {this.toggleFontVisible()},
-  props: ['date', 'stationHeading', 'stationBody']
+  mounted: function() {
+    this.toggleFontVisible();
+  },
+  props: ["date", "stationHeading", "stationBody", "location"]
 };
 </script>
 
@@ -63,7 +68,7 @@ export default {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 2s;
+  transition: opacity 0.5s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
