@@ -114,7 +114,7 @@ export default {
       if (this.$vuetify.breakpoint.mdAndUp) {
         return "big-font";
       } else {
-        return "display-3";
+        return "display-4";
       }
     }
   },
