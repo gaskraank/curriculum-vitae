@@ -1,6 +1,8 @@
 <template>
   <v-container>
-    <v-layout text-center wrap ml-6 mr-6>
+    <v-layout text-center wrap 
+    
+    >
       <ResumeSections
         v-bind:key="content.date"
         v-for="content in sections"
