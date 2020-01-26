@@ -8,6 +8,7 @@
         :stationHeading="content.headings"
         :stationBody="content.body"
         :location="content.location"
+        :gradient="gradient"
       />
     </v-layout>
   </v-container>
@@ -21,13 +22,21 @@ export default {
   methods: {},
   computed: {},
   data: () => ({
+    gradient: "gradient-1",
     sections: [
       {
-        date: "October 19 - now",
-        location: "Silicon Valley, Sunnyvale California",
-        headings:
-          "Mercedes-Benz Research & Development North America Inc.",
-        body: "Master thesis candidate @ Speech and Digital Assistants in Silicon Valley Headquarters for Mercedes-Benz North America Inc. Mainly doing frontend development, UI/UX for internal & future external products for data collection. Designed a chat-bot for simulating the digital in-car assistant in a WebApp.  "
+        date: "March 2018 - March 2020",
+        location: "University of Applied Sciences Reutlingen",
+        headings: "Master of Science, Busines Information Systems. Grade-Ø 1.5",
+        body:
+          "Master thesis candidate @ Speech and Digital Assistants in Silicon Valley Headquarters for Mercedes-Benz North America Inc. "
+      },
+      {
+        date: "March 2014 - March 2018",
+        location: "University of Applied Sciences Ulm",
+        headings: "Bachelor of Engineering, Medical/Mechatronical Engineering. Grade-Ø 1.8",
+        body:
+          "Bachelor's Degree in the area of Medical/Mechatronical Engineering. In the studies I had a special focus on electrical and software engineering."
       }
     ]
   }),
@@ -38,13 +47,6 @@ export default {
 
 
 <style scoped>
-.gradient-0 {
-  background: -webkit-linear-gradient(45deg, #005990, #00e190);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; /* this was it */
-}
-
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 2s;

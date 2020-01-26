@@ -8,7 +8,8 @@
       <transition mode="out-in" name="fade">
         <p
           v-if="remainingFontVisible"
-          class="gradient-0 text-left headline font-weight-regular"
+          class=" text-left headline font-weight-regular"
+          :class="gradient"
         >{{date}}</p>
       </transition>
     </v-flex>
@@ -52,19 +53,14 @@ export default {
   mounted: function() {
     this.toggleFontVisible();
   },
-  props: ["date", "stationHeading", "stationBody", "location"]
+  props: ["date", "stationHeading", "stationBody", "location","gradient"]
 };
 </script>
 
 
 
 <style scoped>
-.gradient-0 {
-  background: -webkit-linear-gradient(45deg, #005990, #00e190);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; /* this was it */
-}
+
 
 .fade-enter-active,
 .fade-leave-active {

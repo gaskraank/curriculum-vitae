@@ -138,29 +138,6 @@ export default {
 
 
 <style scoped>
-.gradient-0 {
-  background: -webkit-linear-gradient(45deg, #005990, #00e190);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; /* this was it */
-}
-
-.chip-gradient {
-  background: -webkit-linear-gradient(45deg, #005990, #00e190);
-}
-
-.gradient-1 {
-  background: -webkit-linear-gradient(45deg, #dd5e89, #f7bb97);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; /* this was it */
-}
-.gradient-2 {
-  background: -webkit-linear-gradient(45deg, #4568dc, #b06ab3);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; /* this was it */
-}
 
 .big-font {
   font-size: 30vh !important;
@@ -219,4 +196,31 @@ export default {
     transform: translate(0, 0px);
   }
 }
+</style>
+
+<style>
+.gradient-0 {
+  background: -webkit-linear-gradient(45deg, #005990, #00e190);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; /* this was it */
+}
+
+.chip-gradient {
+  background: -webkit-linear-gradient(45deg, #005990, #00e190);
+}
+
+.gradient-1 {
+  background: -webkit-linear-gradient(45deg, #dd5e89, #f7bb97);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; /* this was it */
+}
+.gradient-2 {
+  background: -webkit-linear-gradient(45deg, #4568dc, #b06ab3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; /* this was it */
+}
+
 </style>

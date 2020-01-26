@@ -8,6 +8,7 @@
         :stationHeading="content.headings"
         :stationBody="content.body"
         :location="content.location"
+        :gradient="gradient"
       />
     </v-layout>
   </v-container>
@@ -21,6 +22,7 @@ export default {
   methods: {},
   computed: {},
   data: () => ({
+    gradient: 'gradient-0',
     sections: [
       {
         date: "October 19 - now",
@@ -66,12 +68,7 @@ export default {
 
 
 <style scoped>
-.gradient-0 {
-  background: -webkit-linear-gradient(45deg, #005990, #00e190);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; /* this was it */
-}
+
 
 .fade-enter-active,
 .fade-leave-active {
