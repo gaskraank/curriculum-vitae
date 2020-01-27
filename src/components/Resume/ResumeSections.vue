@@ -11,7 +11,7 @@
           class=" text-left headline font-weight-regular"
           :class="gradient"
         >{{date}}</p>
-      </transition>
+      </transition >
     </v-flex>
 
     <v-flex md6 xs12>

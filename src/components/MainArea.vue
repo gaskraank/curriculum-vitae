@@ -52,8 +52,14 @@
             <transition name="fade">
               <v-toolbar v-if="remainingFontVisible" color="black">
                 <v-spacer />
-                <v-chip-group v-model="selection" active-class="chip-gradient" mandatory>
-                  <v-chip v-for="section in sections" :key="section" :value="section" class="black">{{section}}</v-chip>
+                <v-chip-group v-model="selection" mandatory>
+                  <v-chip
+                    v-for="section in sections"
+                    :key="section.section"
+                    :active-class="section.gradient"
+                    :value="section.section"
+                    class="black"
+                  >{{section.section}}</v-chip>
                 </v-chip-group>
                 <v-spacer />
               </v-toolbar>
@@ -65,12 +71,17 @@
     <v-content>
       <v-container fill-height>
         <transition name="slide-fade">
-        <Career v-show="selection == 'Career'" />
+          <Career v-show="selection == 'Career'" />
+        </transition>
+        <transition name="slide-fade">
+          <Education v-show="selection == 'Education'" />
         </transition>
                 <transition name="slide-fade">
-
-        <Education v-show="selection == 'Education'" />        </transition>
-
+          <Skills v-show="selection == 'Skills'" />
+        </transition>
+                <transition name="slide-fade">
+          <About v-show="selection == 'About'" />
+        </transition>
       </v-container>
     </v-content>
   </div>
@@ -79,12 +90,16 @@
 <script>
 import Career from "./Resume/Career";
 import Education from "./Resume/Education";
+import Skills from "./Resume/Skills";
+import About from "./Resume/About";
 
 export default {
   name: "MainArea",
   components: {
     Career,
-    Education
+    Education,
+    Skills,
+    About
   },
   methods: {
     toggleFontVisible() {
@@ -125,8 +140,15 @@ export default {
     heading: "Product.",
     headings: ["Product.", "UI/UX.", "Design."],
     gradient: "gradient-0",
+    gradients: ["gradient-0", "gradient-1", "gradient-2", "gradient-3"],
+
     selection: "Career",
-    sections: ["Career", "Education", "Skills", "About"]
+    sections: [
+      { section: "Career", gradient: "chip-gradient-0" },
+      { section: "Education", gradient: "chip-gradient-1" },
+      { section: "Skills", gradient: "chip-gradient-2" },
+      { section: "About", gradient: "chip-gradient-3" }
+    ]
   }),
   mounted: function() {
     this.toggleFontVisible();
@@ -138,7 +160,6 @@ export default {
 
 
 <style scoped>
-
 .big-font {
   font-size: 30vh !important;
 }
@@ -175,17 +196,30 @@ export default {
   transition: opacity 3s;
 }
 
-
 .slide-fade-enter-active {
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 .slide-fade-leave-active {
-  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
 }
 .slide-fade-enter, .slide-fade-leave-to
 /* .slide-fade-leave-active below version 2.1.8 */ {
   transform: translateX(10px);
   opacity: 0;
+}
+
+.chip-gradient-0 {
+  background: -webkit-linear-gradient(45deg, #005990, #00e190);
+}
+
+.chip-gradient-1 {
+  background: -webkit-linear-gradient(45deg, #dd5e89, #f7bb97);
+}
+.chip-gradient-2 {
+  background: -webkit-linear-gradient(45deg, #4568dc, #b06ab3);
+}
+.chip-gradient-3 {
+  background: -webkit-linear-gradient(45deg, #005990, #00e190);
 }
 
 @keyframes floating {
@@ -206,10 +240,6 @@ export default {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; /* this was it */
 }
 
-.chip-gradient {
-  background: -webkit-linear-gradient(45deg, #005990, #00e190);
-}
-
 .gradient-1 {
   background: -webkit-linear-gradient(45deg, #dd5e89, #f7bb97);
   -webkit-background-clip: text;
@@ -222,5 +252,4 @@ export default {
   -webkit-text-fill-color: transparent;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; /* this was it */
 }
-
 </style>
