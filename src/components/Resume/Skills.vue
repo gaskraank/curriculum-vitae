@@ -176,14 +176,13 @@
           </v-card>
         </v-flex>
         <v-flex md3 />
-
-                <v-flex class="mt-12" md12 xs12>
+        <v-flex class="mt-12" md12 xs12>
           <v-layout>
             <transition mode="out-in" name="fade">
               <p
                 v-if="remainingFontVisible"
                 class="gradient-2 text-left headline font-weight-regular"
-              ><p class="gradient-2">Technologies</p>
+              >Technologies</p>
             </transition>
           </v-layout>
         </v-flex>
