@@ -103,7 +103,7 @@
             <v-card-title
               :class="{'body-2': $vuetify.breakpoint.smAndDown}"
               class="  justify-center gradient-2"
-            >JavaScript</v-card-title>
+            ><p class="gradient-2">JavaScript</p></v-card-title>
           </v-card>
         </v-flex>
                      </transition >
@@ -118,7 +118,7 @@
             <v-card-title
               :class="{'body-2': $vuetify.breakpoint.smAndDown}"
               class="justify-center gradient-2"
-            >Python</v-card-title>
+            ><p class="gradient-2">Python</p></v-card-title>
           </v-card>
         </v-flex>
         <v-flex mb-2 md3 xs4>
@@ -131,7 +131,7 @@
             <v-card-title
               :class="{'body-2': $vuetify.breakpoint.smAndDown}"
               class="justify-center gradient-2"
-            >C++ & Arduino</v-card-title>
+            ><p class="gradient-2">Embedded</p></v-card-title>
           </v-card>
         </v-flex>
         <v-flex md3 />
@@ -146,7 +146,7 @@
             <v-card-title
               :class="{'body-2': $vuetify.breakpoint.smAndDown}"
               class="justify-center gradient-2"
-            >CSS3</v-card-title>
+            ><p class="gradient-2">CSS3</p></v-card-title>
           </v-card>
         </v-flex>
         <v-flex mb-2 md3 xs4>
@@ -158,7 +158,7 @@
             <v-card-title 
               :class="{'body-2': $vuetify.breakpoint.smAndDown}"
               class="justify-center gradient-2"
-            >Visual C#</v-card-title>
+            ><p class="gradient-2">Visual C#</p></v-card-title>
           </v-card>
         </v-flex>
 
@@ -172,7 +172,7 @@
             <v-card-title
               :class="{'body-2': $vuetify.breakpoint.smAndDown}"
               class="justify-center gradient-2"
-            >HTML5</v-card-title>
+            ><p class="gradient-2">HTML5</p></v-card-title>
           </v-card>
         </v-flex>
         <v-flex md3 />
@@ -183,7 +183,7 @@
               <p
                 v-if="remainingFontVisible"
                 class="gradient-2 text-left headline font-weight-regular"
-              >Technologies</p>
+              ><p class="gradient-2">Technologies</p>
             </transition>
           </v-layout>
         </v-flex>
@@ -197,8 +197,8 @@
             <v-spacer />
             <v-card-title
               :class="{'mt-2 body-2': $vuetify.breakpoint.smAndDown}"
-              class="justify-center gradient-2"
-            >Cloud</v-card-title>
+              class="justify-center "
+            ><p class="gradient-2">Cloud</p></v-card-title>
           </v-card>
         </v-flex>
 
@@ -211,8 +211,8 @@
             <v-spacer />
             <v-card-title
               :class="{'body-2': $vuetify.breakpoint.smAndDown}"
-              class="justify-center gradient-2"
-            >Frontend</v-card-title>
+              class="justify-center"
+            ><p class="gradient-2">Frontend</p></v-card-title>
           </v-card>
         </v-flex>
 
