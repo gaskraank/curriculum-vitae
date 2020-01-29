@@ -6,7 +6,7 @@
         wrap
         :class="{'ml-0 mr-0': $vuetify.breakpoint.smAndDown, 'ml-6 mr-6': $vuetify.breakpoint.mdAndUp}"
       >
-        <v-flex md6 xs12>
+        <v-flex md12 xs12>
           <v-layout>
             <transition mode="out-in" name="fade">
               <p
@@ -47,6 +47,9 @@
               <div class="progress-bar-child shrinker timelapse"></div>
             </div>
           </transition>
+
+        </v-flex>
+                <v-flex class="mb-6" md6 xs12>
 
           <transition mode="out-in" name="fade">
             <p v-if="remainingFontVisible" class="text-left .body-2 font-weight-bold">
@@ -89,125 +92,148 @@
             </transition>
           </v-layout>
         </v-flex>
+          <transition mode="out-in" name="fade">
 
         <v-flex mb-2 md3 xs4>
-          <v-card dark class="gradient-0" max-width="200px">
-            <v-icon
+          <v-card  v-if="remainingFontVisible" color="black" max-width="200px">
+           <v-icon color="#5368d6"
               :class="{'display-1': $vuetify.breakpoint.smAndDown, 'display-4': $vuetify.breakpoint.mdAndUp}"
             >mdi-language-javascript</v-icon>
             <v-spacer />
             <v-card-title
               :class="{'body-2': $vuetify.breakpoint.smAndDown}"
-              class="justify-center"
+              class="  justify-center gradient-2"
             >JavaScript</v-card-title>
           </v-card>
         </v-flex>
+                     </transition >
+
         <v-flex mb-2 md3 xs4>
-          <v-card dark class="gradient-1" max-width="200px">
+          <v-card  color="black" max-width="200px">
             <v-icon
+            color="#5368d6"
               :class="{'display-1': $vuetify.breakpoint.smAndDown, 'display-4': $vuetify.breakpoint.mdAndUp}"
             >mdi-language-python</v-icon>
             <v-spacer />
             <v-card-title
               :class="{'body-2': $vuetify.breakpoint.smAndDown}"
-              class="justify-center"
+              class="justify-center gradient-2"
             >Python</v-card-title>
           </v-card>
         </v-flex>
         <v-flex mb-2 md3 xs4>
-          <v-card dark class="gradient-2" max-width="200px">
+          <v-card  color="black" max-width="200px">
             <v-icon
+            color="#5368d6"
               :class="{'display-1': $vuetify.breakpoint.smAndDown, 'display-4': $vuetify.breakpoint.mdAndUp}"
             >mdi-language-cpp</v-icon>
             <v-spacer />
             <v-card-title
               :class="{'body-2': $vuetify.breakpoint.smAndDown}"
-              class="justify-center"
+              class="justify-center gradient-2"
             >C++ & Arduino</v-card-title>
           </v-card>
         </v-flex>
         <v-flex md3 />
 
         <v-flex mb-2 md3 xs4>
-          <v-card dark class="gradient-0" max-width="200px">
+          <v-card dark color="black" max-width="200px">
             <v-icon
+            color="#5368d6"
               :class="{'display-1': $vuetify.breakpoint.smAndDown, 'display-4': $vuetify.breakpoint.mdAndUp}"
             >mdi-language-css3</v-icon>
             <v-spacer />
             <v-card-title
               :class="{'body-2': $vuetify.breakpoint.smAndDown}"
-              class="justify-center"
+              class="justify-center gradient-2"
             >CSS3</v-card-title>
           </v-card>
         </v-flex>
         <v-flex mb-2 md3 xs4>
-          <v-card dark class="gradient-1" max-width="200px" max-height="200px">
-            <v-icon
+          <v-card dark  max-width="200px" color="black" max-height="200px">
+            <v-icon color="#5368d6"
               :class="{'display-1': $vuetify.breakpoint.smAndDown, 'display-4': $vuetify.breakpoint.mdAndUp}"
             >mdi-language-csharp</v-icon>
             <v-spacer />
-            <v-card-title
+            <v-card-title 
               :class="{'body-2': $vuetify.breakpoint.smAndDown}"
-              class="justify-center"
+              class="justify-center gradient-2"
             >Visual C#</v-card-title>
           </v-card>
         </v-flex>
 
         <v-flex mb-2 md3 xs4>
-          <v-card dark class="gradient-2" max-width="200px">
+          <v-card dark class="black" max-width="200px">
             <v-icon
+            color="#5368d6"
               :class="{'display-1': $vuetify.breakpoint.smAndDown, 'display-4': $vuetify.breakpoint.mdAndUp}"
             >mdi-language-html5</v-icon>
             <v-spacer />
             <v-card-title
               :class="{'body-2': $vuetify.breakpoint.smAndDown}"
-              class="justify-center"
+              class="justify-center gradient-2"
             >HTML5</v-card-title>
           </v-card>
         </v-flex>
         <v-flex md3 />
 
+                <v-flex class="mt-12" md12 xs12>
+          <v-layout>
+            <transition mode="out-in" name="fade">
+              <p
+                v-if="remainingFontVisible"
+                class="gradient-2 text-left headline font-weight-regular"
+              >Technologies</p>
+            </transition>
+          </v-layout>
+        </v-flex>
+
         <v-flex mb-2 md3 xs4>
-          <v-card dark class="gradient-0" max-width="200px">
+          <v-card dark class='black grey--text max-width="200px"'>
             <v-icon
+            color="#5368d6"
               :class="{'display-1': $vuetify.breakpoint.smAndDown, 'display-4': $vuetify.breakpoint.mdAndUp}"
             >mdi-cloud</v-icon>
             <v-spacer />
             <v-card-title
               :class="{'mt-2 body-2': $vuetify.breakpoint.smAndDown}"
-              class="justify-center"
+              class="justify-center gradient-2"
             >Cloud</v-card-title>
           </v-card>
         </v-flex>
 
         <v-flex mb-2 md3 xs4>
-          <v-card dark class="gradient-1" max-width="200px" max-height="200px">
+          <v-card class='black slategrey' max-width="200px" max-height="200px">
             <p
               :class="{'headline ': $vuetify.breakpoint.smAndDown, 'mt-5 display-3': $vuetify.breakpoint.mdAndUp}"
-              class
-            >UI/UX</p>
+              
+            class='slategrey'>UI/UX</p>
             <v-spacer />
             <v-card-title
               :class="{'body-2': $vuetify.breakpoint.smAndDown}"
-              class="justify-center"
+              class="justify-center gradient-2"
             >Frontend</v-card-title>
           </v-card>
         </v-flex>
 
         <v-flex mb-2 md3 xs4>
-          <v-card dark class="gradient-2" max-width="200px">
+          <v-card  
+          color="black
+          " max-width="200px">
             <v-icon
+            color="#5368d6"
               :class="{'display-1': $vuetify.breakpoint.smAndDown, 'display-4': $vuetify.breakpoint.mdAndUp}"
-              class
+              class="slategrey"
             >mdi-azure</v-icon>
             <v-spacer />
             <v-card-title
               :class="{'body-2 mt-2': $vuetify.breakpoint.smAndDown}"
-              class="justify-center"
-            >CI/CD</v-card-title>
+              class=" justify-center"
+            ><p class="gradient-2">CI/CD</p></v-card-title>
           </v-card>
         </v-flex>
-        <v-flex md3 />
+                <v-flex md-3 xs-3/>
+
       </v-layout>
     </v-layout>
   </v-container>
@@ -240,8 +266,12 @@ export default {
 
 
 <style scoped>
+.text {
+  -webkit-mask-image: linear-gradient(blue, green);
+}
 #progress-bar-container {
   width: 50%;
+  
   height: 5%;
   position: relative;
   transform: translateY(-50%);
@@ -263,6 +293,7 @@ export default {
   background: -moz-linear-gradient(45deg, #005990, #00e190);
   /* FF3.6-15 */
   background: -webkit-linear-gradient(45deg, #005990, #00e190);
+
   /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(45deg, #005990, #00e190);
 }
@@ -282,6 +313,40 @@ export default {
   animation-timing-function: cubic-bezier(0.86, 0.6, 0.6, 0.96);
 }
 
+.gradient-0 {
+  background: -webkit-linear-gradient(45deg, #005990, #00e190);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-mask-image: linear-gradient(45deg, #005990, #00e190);
+
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; /* this was it */
+}
+
+.gradient-1 {
+  background: -webkit-linear-gradient(45deg, #dd5e89, #f7bb97);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; /* this was it */
+}
+.gradient-2 {
+    background: white;
+  background: -webkit-linear-gradient(45deg, #4568dc, #b06ab3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; /* this was it */
+}
+.gradient-4 {
+   background: red;
+    background: -webkit-linear-gradient(left, orange , yellow, green, cyan, blue, violet);
+    background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+    background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+    background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.slategrey{
+    color: #5368d6;
+}
 @keyframes timelapse {
   0% {
     width: 100%;

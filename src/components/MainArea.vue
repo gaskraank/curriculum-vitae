@@ -208,19 +208,7 @@ export default {
   opacity: 0;
 }
 
-.chip-gradient-0 {
-  background: -webkit-linear-gradient(45deg, #005990, #00e190);
-}
 
-.chip-gradient-1 {
-  background: -webkit-linear-gradient(45deg, #dd5e89, #f7bb97);
-}
-.chip-gradient-2 {
-  background: -webkit-linear-gradient(45deg, #4568dc, #b06ab3);
-}
-.chip-gradient-3 {
-  background: -webkit-linear-gradient(45deg, #005990, #00e190);
-}
 
 @keyframes floating {
   from {
@@ -251,5 +239,19 @@ export default {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; /* this was it */
+}
+
+.chip-gradient-0 {
+  background: -webkit-linear-gradient(45deg, #005990, #00e190);
+}
+
+.chip-gradient-1 {
+  background: -webkit-linear-gradient(45deg, #dd5e89, #f7bb97);
+}
+.chip-gradient-2 {
+  background: -webkit-linear-gradient(45deg, #4568dc, #b06ab3);
+}
+.chip-gradient-3 {
+  background: -webkit-linear-gradient(45deg, #005990, #00e190);
 }
 </style>

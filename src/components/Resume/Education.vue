@@ -26,6 +26,13 @@ export default {
     gradient: "gradient-1",
     sections: [
       {
+        date: "January 20 - March 20",
+        location: "Stanford University, Continuing Studies",
+        headings: "The Frontiers of Artificial Intelligence",
+        body:
+          "Visited the Stanford university for the on-campus continuing studies course about the frontiers of Aritificial Intelligence. Mainly focusing on Natural Language Processing, Computer Vision and the future posibilities of AI."
+      },
+      {
         date: "March 18 - March 20",
         location: "University of Applied Sciences Reutlingen",
         headings: "Master of Science, Busines Information Systems. Grade-Ø 1.5",
