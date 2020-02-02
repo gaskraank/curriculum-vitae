@@ -1,8 +1,12 @@
 <template>
   <v-container>
     <v-layout text-center wrap>
+                          <v-flex md12 xs12 class="hidden-md-and-up"> 
+            <p class="gradient-0 text-left headline font-weight-regular">About Me</p>
+          </v-flex>
       <v-flex md4 xs12>
         <v-layout>
+
           <v-card class="primary lighten-1" max-width="300">
             <v-img
             lazy-src=""
@@ -26,10 +30,11 @@
 
       <v-flex   md8 xs12>
         <v-layout wrap>
-          <v-flex md12 xs12>
+          <v-flex md12 xs12 class="hidden-sm-and-down"> 
             <p class="gradient-0 text-left headline font-weight-regular">About Me</p>
           </v-flex>
-          <v-flex md12 xs12>
+          <v-flex           :class="{'mt-3': $vuetify.breakpoint.smAndDown}"
+ md12 xs12>
             <p
               class="silvergrey--text text-left .body-1 font-weight-regular"
             >I'm a software developer with a mechatronical engineering background. In my current position in Silicon Valley as a Frontend developer I am focussing on designing responsive <span class="gradient-0">UI/UX</span> which are solving real customer problems.

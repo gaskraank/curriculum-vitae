@@ -99,6 +99,7 @@
                 fixed
                 dark
                 fab
+                :small="$vuetify.breakpoint.smAndDown"
                 bottom 
                 right
                 color="primary lighten-2"
