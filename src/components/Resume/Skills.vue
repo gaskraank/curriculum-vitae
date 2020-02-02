@@ -12,6 +12,28 @@
               <p
                 v-if="remainingFontVisible"
                 class="gradient-2 text-left headline font-weight-regular"
+              >Certificates</p>
+            </transition>
+          </v-layout>
+        </v-flex>
+
+        <v-flex md12 xs12>
+          <Certificate
+            v-bind:key="certificate.number"
+            v-for="certificate in certificates"
+            :certificateName="certificate.title"
+            :certificateDescription="certificate.body"
+            :certificateNumber="certificate.number"
+            :certificateUrl="certificate.url"
+            gradient="gradient-0"
+          />
+        </v-flex>
+        <v-flex md12 xs12>
+          <v-layout>
+            <transition mode="out-in" name="fade">
+              <p
+                v-if="remainingFontVisible"
+                class="gradient-2 text-left headline font-weight-regular"
               >Languages</p>
             </transition>
           </v-layout>
@@ -47,10 +69,8 @@
               <div class="progress-bar-child shrinker timelapse"></div>
             </div>
           </transition>
-
         </v-flex>
-                <v-flex class="mb-6" md6 xs12>
-
+        <v-flex class="mb-6" md6 xs12>
           <transition mode="out-in" name="fade">
             <p v-if="remainingFontVisible" class="text-left .body-2 font-weight-bold">
               <span class="white--text">English</span>
@@ -92,46 +112,52 @@
             </transition>
           </v-layout>
         </v-flex>
-          <transition mode="out-in" name="fade">
+        <transition mode="out-in" name="fade">
+          <v-flex mb-2 md3 xs4>
+            <v-card v-if="remainingFontVisible" color="black" max-width="200px">
+              <v-icon
+                color="#5368d6"
+                :class="{'display-1': $vuetify.breakpoint.smAndDown, 'display-4': $vuetify.breakpoint.mdAndUp}"
+              >mdi-language-javascript</v-icon>
+              <v-spacer />
+              <v-card-title
+                :class="{'body-2': $vuetify.breakpoint.smAndDown}"
+                class="justify-center gradient-2"
+              >
+                <p class="gradient-2">JavaScript</p>
+              </v-card-title>
+            </v-card>
+          </v-flex>
+        </transition>
 
         <v-flex mb-2 md3 xs4>
-          <v-card  v-if="remainingFontVisible" color="black" max-width="200px">
-           <v-icon color="#5368d6"
-              :class="{'display-1': $vuetify.breakpoint.smAndDown, 'display-4': $vuetify.breakpoint.mdAndUp}"
-            >mdi-language-javascript</v-icon>
-            <v-spacer />
-            <v-card-title
-              :class="{'body-2': $vuetify.breakpoint.smAndDown}"
-              class="  justify-center gradient-2"
-            ><p class="gradient-2">JavaScript</p></v-card-title>
-          </v-card>
-        </v-flex>
-                     </transition >
-
-        <v-flex mb-2 md3 xs4>
-          <v-card  color="black" max-width="200px">
+          <v-card color="black" max-width="200px">
             <v-icon
-            color="#5368d6"
+              color="#5368d6"
               :class="{'display-1': $vuetify.breakpoint.smAndDown, 'display-4': $vuetify.breakpoint.mdAndUp}"
             >mdi-language-python</v-icon>
             <v-spacer />
             <v-card-title
               :class="{'body-2': $vuetify.breakpoint.smAndDown}"
               class="justify-center gradient-2"
-            ><p class="gradient-2">Python</p></v-card-title>
+            >
+              <p class="gradient-2">Python</p>
+            </v-card-title>
           </v-card>
         </v-flex>
         <v-flex mb-2 md3 xs4>
-          <v-card  color="black" max-width="200px">
+          <v-card color="black" max-width="200px">
             <v-icon
-            color="#5368d6"
+              color="#5368d6"
               :class="{'display-1': $vuetify.breakpoint.smAndDown, 'display-4': $vuetify.breakpoint.mdAndUp}"
             >mdi-language-cpp</v-icon>
             <v-spacer />
             <v-card-title
               :class="{'body-2': $vuetify.breakpoint.smAndDown}"
               class="justify-center gradient-2"
-            ><p class="gradient-2">Embedded</p></v-card-title>
+            >
+              <p class="gradient-2">Embedded</p>
+            </v-card-title>
           </v-card>
         </v-flex>
         <v-flex md3 />
@@ -139,40 +165,47 @@
         <v-flex mb-2 md3 xs4>
           <v-card dark color="black" max-width="200px">
             <v-icon
-            color="#5368d6"
+              color="#5368d6"
               :class="{'display-1': $vuetify.breakpoint.smAndDown, 'display-4': $vuetify.breakpoint.mdAndUp}"
             >mdi-language-css3</v-icon>
             <v-spacer />
             <v-card-title
               :class="{'body-2': $vuetify.breakpoint.smAndDown}"
               class="justify-center gradient-2"
-            ><p class="gradient-2">CSS3</p></v-card-title>
+            >
+              <p class="gradient-2">CSS3</p>
+            </v-card-title>
           </v-card>
         </v-flex>
         <v-flex mb-2 md3 xs4>
-          <v-card dark  max-width="200px" color="black" max-height="200px">
-            <v-icon color="#5368d6"
+          <v-card dark max-width="200px" color="black" max-height="200px">
+            <v-icon
+              color="#5368d6"
               :class="{'display-1': $vuetify.breakpoint.smAndDown, 'display-4': $vuetify.breakpoint.mdAndUp}"
             >mdi-language-csharp</v-icon>
             <v-spacer />
-            <v-card-title 
+            <v-card-title
               :class="{'body-2': $vuetify.breakpoint.smAndDown}"
               class="justify-center gradient-2"
-            ><p class="gradient-2">Visual C#</p></v-card-title>
+            >
+              <p class="gradient-2">Visual C#</p>
+            </v-card-title>
           </v-card>
         </v-flex>
 
         <v-flex mb-2 md3 xs4>
           <v-card dark class="black" max-width="200px">
             <v-icon
-            color="#5368d6"
+              color="#5368d6"
               :class="{'display-1': $vuetify.breakpoint.smAndDown, 'display-4': $vuetify.breakpoint.mdAndUp}"
             >mdi-language-html5</v-icon>
             <v-spacer />
             <v-card-title
               :class="{'body-2': $vuetify.breakpoint.smAndDown}"
               class="justify-center gradient-2"
-            ><p class="gradient-2">HTML5</p></v-card-title>
+            >
+              <p class="gradient-2">HTML5</p>
+            </v-card-title>
           </v-card>
         </v-flex>
         <v-flex md3 />
@@ -188,59 +221,92 @@
         </v-flex>
 
         <v-flex mb-2 md3 xs4>
-          <v-card dark class='black grey--text max-width="200px"'>
+          <v-card dark class="black" max-width="200px">
             <v-icon
-            color="#5368d6"
+              color="#5368d6"
               :class="{'display-1': $vuetify.breakpoint.smAndDown, 'display-4': $vuetify.breakpoint.mdAndUp}"
             >mdi-cloud</v-icon>
             <v-spacer />
             <v-card-title
               :class="{'mt-2 body-2': $vuetify.breakpoint.smAndDown}"
-              class="justify-center "
-            ><p class="gradient-2">Cloud</p></v-card-title>
+              class="justify-center"
+            >
+              <p class="gradient-2">Cloud</p>
+            </v-card-title>
           </v-card>
         </v-flex>
 
         <v-flex mb-2 md3 xs4>
-          <v-card class='black slategrey' max-width="200px" max-height="200px">
+          <v-card dark class="black" max-width="200px">
             <p
               :class="{'headline ': $vuetify.breakpoint.smAndDown, 'mt-5 display-3': $vuetify.breakpoint.mdAndUp}"
-              
-            class='slategrey'>UI/UX</p>
+              class="slategrey"
+            >UI/UX</p>
             <v-spacer />
-            <v-card-title
-              :class="{'body-2': $vuetify.breakpoint.smAndDown}"
-              class="justify-center"
-            ><p class="gradient-2">Frontend</p></v-card-title>
+            <v-card-title :class="{'body-2': $vuetify.breakpoint.smAndDown}" class="justify-center">
+              <p class="gradient-2">Frontend</p>
+            </v-card-title>
           </v-card>
         </v-flex>
 
         <v-flex mb-2 md3 xs4>
-          <v-card  
-          color="black
-          " max-width="200px">
+          <v-card color="black
+          " max-width="200px" max-height="200px">
             <v-icon
-            color="#5368d6"
+              color="#5368d6"
               :class="{'display-1': $vuetify.breakpoint.smAndDown, 'display-4': $vuetify.breakpoint.mdAndUp}"
               class="slategrey"
             >mdi-azure</v-icon>
             <v-spacer />
             <v-card-title
               :class="{'body-2 mt-2': $vuetify.breakpoint.smAndDown}"
-              class=" justify-center"
-            ><p class="gradient-2">CI/CD</p></v-card-title>
+              class="justify-center"
+            >
+              <p class="gradient-2">CI/CD</p>
+            </v-card-title>
           </v-card>
         </v-flex>
-                <v-flex md-3 xs-3/>
-
+        <v-flex md-3/>
       </v-layout>
     </v-layout>
   </v-container>
 </template>
 
 <script>
+import Certificate from "../Reusables/Certificate";
 export default {
+  components: { Certificate },
   name: "ResumeSection",
+  data: () => ({
+    remainingFontVisible: false,
+
+    certificates: [
+      {
+        title: "Vue.JS UI/UX Framework",
+        number: "UC-QASDX4NT",
+        url: "http://ude.my/UC-QASDX4NT",
+        body: ""
+      },
+      {
+        title: "JavaScript Fundamentals",
+        number: "UC-LFM5HQJ3",
+        url: "http://ude.my/UC-LFM5HQJ3",
+        body: ""
+      },
+      {
+        title: "Natural Language Processing (NLP)",
+        number: "UC-DHE89U77",
+        url: "http://ude.my/UC-DHE89U77",
+        body: ""
+      },
+      {
+        title: "UX, UI and Design Thinking",
+        number: "UC-XOGZDKR8",
+        url: "http://ude.my/UC-XOGZDKR8",
+        body: ""
+      }
+    ]
+  }),
   methods: {
     toggleFontVisible() {
       setTimeout(() => {
@@ -252,9 +318,7 @@ export default {
     }
   },
   computed: {},
-  data: () => ({
-    remainingFontVisible: false
-  }),
+
   mounted: function() {
     this.toggleFontVisible();
   },
@@ -270,7 +334,7 @@ export default {
 }
 #progress-bar-container {
   width: 50%;
-  
+
   height: 5%;
   position: relative;
   transform: translateY(-50%);
@@ -318,7 +382,7 @@ export default {
   -webkit-text-fill-color: transparent;
   -webkit-mask-image: linear-gradient(45deg, #005990, #00e190);
 
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; /* this was it */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; /* this was it */
 }
 
 .gradient-1 {
@@ -328,23 +392,15 @@ export default {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; /* this was it */
 }
 .gradient-2 {
-    background: white;
+  background: white;
   background: -webkit-linear-gradient(45deg, #4568dc, #b06ab3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; /* this was it */
 }
-.gradient-4 {
-   background: red;
-    background: -webkit-linear-gradient(left, orange , yellow, green, cyan, blue, violet);
-    background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
-    background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
-    background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.slategrey{
-    color: #5368d6;
+
+.slategrey {
+  color: #5368d6;
 }
 @keyframes timelapse {
   0% {

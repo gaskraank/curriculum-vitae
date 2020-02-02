@@ -49,7 +49,7 @@
       <v-btn
         v-if="appBarVisible"
         color="grey"
-        href="https://github.com/gaskraank"
+        href="https://github.com/bayboraguelec"
         target="_blank"
         text
       >

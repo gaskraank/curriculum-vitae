@@ -76,10 +76,10 @@
         <transition name="slide-fade">
           <Education v-show="selection == 'Education'" />
         </transition>
-                <transition name="slide-fade">
+        <transition name="slide-fade">
           <Skills v-show="selection == 'Skills'" />
         </transition>
-                <transition name="slide-fade">
+        <transition name="slide-fade">
           <About v-show="selection == 'About'" />
         </transition>
       </v-container>
@@ -208,8 +208,6 @@ export default {
   opacity: 0;
 }
 
-
-
 @keyframes floating {
   from {
     transform: translate(0, 15px);
@@ -240,18 +238,28 @@ export default {
   -webkit-text-fill-color: transparent;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; /* this was it */
 }
+.gradient-3 {
+  background: -webkit-linear-gradient(45deg, #2193b0, #6dd5ed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; /* this was it */
+}
 
 .chip-gradient-0 {
   background: -webkit-linear-gradient(45deg, #005990, #00e190);
+  color: black !important;
 }
 
 .chip-gradient-1 {
   background: -webkit-linear-gradient(45deg, #dd5e89, #f7bb97);
+  color: black !important;
 }
 .chip-gradient-2 {
   background: -webkit-linear-gradient(45deg, #4568dc, #b06ab3);
+  color: black !important;
 }
 .chip-gradient-3 {
-  background: -webkit-linear-gradient(45deg, #005990, #00e190);
+  background: -webkit-linear-gradient(45deg, #2193b0, #6dd5ed);
+  color: black !important;
 }
 </style>

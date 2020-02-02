@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import ResumeSections from "./ResumeSections";
+import ResumeSections from "../Reusables/ResumeSections";
 export default {
   name: "Career",
   components: { ResumeSections },
