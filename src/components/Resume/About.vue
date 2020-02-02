@@ -5,6 +5,7 @@
         <v-layout>
           <v-card class="primary lighten-1" max-width="300">
             <v-img
+            lazy-src=""
               class="white--text align-end"
               height="300px"
               width="300px"

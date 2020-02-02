@@ -1,6 +1,9 @@
 <template>
+
   <div>
+
     <v-content>
+
       <v-container fill-height>
         <v-layout
           text-center
@@ -59,6 +62,8 @@
                     :active-class="section.gradient"
                     :value="section.section"
                     class="black"
+                   @click="$vuetify.goTo(600)"
+
                   >{{section.section}}</v-chip>
                 </v-chip-group>
                 <v-spacer />
@@ -83,8 +88,28 @@
           <About v-show="selection == 'About'" />
         </transition>
       </v-container>
+
+
     </v-content>
+                    <v-fab-transition>
+
+       <v-btn 
+                           v-show="floatingButton"
+
+                fixed
+                dark
+                fab
+                bottom 
+                right
+                color="primary lighten-2"
+                @click="$vuetify.goTo(0)"
+              >
+                <v-icon>mdi-arrow-up</v-icon>
+              </v-btn>
+                              </v-fab-transition>
+
   </div>
+  
 </template>
 
 <script>
@@ -119,7 +144,18 @@ export default {
         this.gradient = "gradient-" + this.counter;
         this.fontVisible = true;
       }, 5000);
-    }
+    },   
+     handleScroll () {
+       if(window.scrollY > 300)
+              // eslint-disable-next-line no-console
+       { this.floatingButton = true}
+       else
+       {
+this.floatingButton = false
+       }
+      // Any code to be executed when the window is scrolled
+    },
+
   },
   computed: {
     // a computed getter
@@ -135,6 +171,8 @@ export default {
   },
   data: () => ({
     fontVisible: false,
+    floatingButton: false,
+    timeout: 0,
     remainingFontVisible: false,
     counter: -1,
     heading: "Product.",
@@ -153,6 +191,13 @@ export default {
   mounted: function() {
     this.toggleFontVisible();
     this.changeHeading();
+  },
+
+  created () {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll);
   }
 };
 </script>
