@@ -68,7 +68,7 @@ I am working in the automative business, which is in a huge structural change. N
                 <v-img
                   contain
                   :class="{'small-icon': $vuetify.breakpoint.smAndDown, 'big-icon mt-6': $vuetify.breakpoint.mdAndUp}"
-                  src="../../../public/mercedes.png"
+                  src="../../../public/porsche.png"
                 ></v-img>
               </v-flex>
             </v-layout>
